@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@1&family=Varela+Round&display=swap');
+
+// font-family: 'Source Code Pro', monospace;
+// font-family: 'Varela Round', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  background-color: rgb(68, 64, 84);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+
+  h1 {
+    color: white;
+    font-size: clamp(1.5rem, 1.7vw + 1.1rem, 3rem);
+  }
+
+  nav {
+
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        a {
+          font-size: clamp(1.1rem, 1.3vw + 0.4rem, 1.8rem);
+          color: white;
+          text-decoration: none;
+          margin-left: max(1vw, 3.2rem);
+
+          &:hover {
+            border-bottom: 2px solid white;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.postSection {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+
+
+  .postBody {
+    -webkit-box-shadow: 0px 0px 32px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 32px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 32px -2px rgba(0, 0, 0, 0.75);
+    border-radius: 1em;
+    padding: 1.7em;
+    width: 50%;
+
+    .postTitle {
+      font-size: clamp(1.15rem, 1.5vw + 0.4rem, 2em);
+      // border: 2px solid red;
+      font-family: 'Varela Round', sans-serif;
+
+    }
+
+    .postContent {
+      margin: 0.8em 0em;
+      line-height: 1em;
+      font-size: clamp(0.9rem, 1.1vw + 0.3rem, 1.3rem);
+      font-family: 'Source Code Pro', monospace;
+
+    }
+
+    .postLink {
+      color: black;
+      font-size: clamp(1rem, 1.5vw + 0.3rem, 1.3rem);
+    }
+  }
+}
+
+.addPostSection {
+  // border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+
+  h1 {
+    font-size: clamp(1.4rem, 1.5vw + 1rem, 2.5rem);
+    margin-top: 1em;
+    // border: 2px solid red;
+  }
+
+  form {
+    // border: 2px solid black;
+    display: flex;
+    width: 80%;
+    gap: 0.8em;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      font-size: clamp(0.9rem, 1vw + 0.6rem, 1.6rem);
+      width: 75%;
+      padding: 0.5em 0.4em;
+    }
+
+    textarea {
+      width: 75%;
+      font-size: clamp(0.9rem, 1vw + 0.6rem, 1.6rem);
+      padding: 0.7em;
+      height: 10em;
+    }
+
+    .deleteButton {
+      background-color: rgb(229, 93, 93);
+    }
+
+    button {
+      border: 0;
+      border-radius: 0.4em;
+      font-size: clamp(0.9rem, 1vw + 0.6rem, 1.6rem);;
+      padding: 0.3em 0.5em;
+      color: black;
+      width: 10em;
+      background-color: rgb(221, 189, 189);
+
+      &:hover {
+        background-color: rgb(125, 58, 58);
+      }
+
+      &[disabled] {
+        opacity: 0.4;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: rgb(221, 189, 189);
+        }
+      }
+    }
+
+
+    select {
+      // border: 2px solid red;
+      width: 50%;
+      font-size: clamp(0.9rem, 1vw + 0.6rem, 1.3rem);
+      padding: 0.5em 0.2em;
+    }
+  }
+}
+
+.usersList {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 3em;
+  gap: 0.7em;
+
+  li {
+    // border: 2px solid red;
+    text-align: center;
+    list-style: none;
+
+    a {
+      font-size: clamp(0.9rem, 1.4vw + 0.6rem, 1.8rem);
+    }
+  }
+}
+
+.userPostHistory {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5em;
+
+  h1 {
+    font-size: clamp(1.2rem, 1.5vw + 0.8rem, 3rem);
+    margin: 1em 0em;
+    text-align: center;
+  }
+
+  li {
+    text-align: center;
+    list-style: none;
+    
+    a {
+      color: black;
+      font-size: clamp(0.9rem, 1.2vw + 0.4rem, 1.5rem);
+    }
+  }
+}
+
+.Mobile-Menu-Icons {
+  display: none !important;
+}
+
+@media screen and (max-width:900px) {
+  .addPostSection {
+    form {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width:780px) {
+  header {
+    flex-direction: column;
+    // border: 2px solid red;
+    align-items: stretch;
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        // border: 2px solid yellow;
+      }
+
+      button {
+        // border: 2px solid yellow;
+        padding: 0;
+        height: 1.5rem;
+      }
+
+      .Mobile-Menu-Icons {
+        display: block !important;
+        color: white !important;
+      }
+    }
+
+    nav {
+      .hideIcons {
+        display: none;
+      }
+
+      ul {
+        flex-direction: column;
+        // border: 2px solid blue;
+        margin-top: 1em;
+
+        li {
+          // border: 2px solid red;
+          text-align: center;
+          padding: 0.6em 0.5em;
+          a{
+            margin-left: 0;
+          }
+        }
+
+      }
+    }
+  }
+
+  .postSection {
+
+    // border: 2px solid blue;
+    .postBody {
+      // border: 2px solid red;
+      width: 80%;
+    }
+  }
+}
+
+
+@media screen and (max-width:500px) {
+  .postSection {
+
+    // border: 2px solid rgb(169, 56, 31);
+    .postBody {
+      width: 95%;
+    }
+  }
+}
